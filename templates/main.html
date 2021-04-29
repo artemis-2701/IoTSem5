@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="refresh" content="5" />
+
+<head>
+  <title>Home</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel='stylesheet' href="../static/main.css" type="text/css">
+</head>
+<style>
+  .button {
+        display: inline-block;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #7aa8b7;
+        border-radius: 6px;
+        outline: none;
+      }
+</style>
+
+<body>
+
+  <!-- making the navigation bar -->
+  <div class="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+        <a class="navbar-brand" href=""><span class="nav-head">HealthTracker</span></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+            <ul class="navbar-nav ml-auto right">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}"> <span class="nv-el">Logout</span></a>
+                </li>
+            </ul>
+    </nav>
+</div>
+
+  <div class='container'>
+    <div class='row'>
+      
+      <div class="col-lg-8">
+        <h3><strong>{{ account['username'] }}</strong></h3>
+        <h3><strong>{{ account['email'] }}</strong></h3>
+      </div>
+    </div>
+    <br>
+    <div class='row'>
+      <div class='col-lg-4'>
+        <div class='field'>
+          <strong>Temperature </strong> 
+          <p>{{ Temperature }}</p>
+        </div>
+      </div>
+      <div class='col-lg-4'>
+        <div class='field'>
+          <strong>BloodOxygen </strong> 
+          <p>{{ BloodOxygen }}</p>
+        </div>
+      </div>
+      <div class='col-lg-4'>
+        <div class='field'>
+          <strong>HeartRate </strong> 
+          <p>{{ HeartRate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <center> <a class="button" href="plots/graphs">show graphs</a></center>
+ 
+</body>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</html>
